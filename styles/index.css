@@ -1,0 +1,202 @@
+@import "fonts.css";
+
+html, body{
+    margin: 0;
+    padding: 0;
+    color: #45413e;
+}
+a{
+    text-decoration: none; /*у всех ссылок уберем линию*/
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+header, main,footer{
+    width: 100%;
+}
+header{
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    height: 80px;
+
+}
+.logo{
+    font-family: 'RobotoSlab-Bold';
+    color: #816fca;
+    font-weight: bold;
+    text-transform: uppercase; /*все буквы большые*/
+    font-size: 30px;
+}
+.head-wrap{
+    height: 100%;
+    width: 100%;
+    position: relative;                       /*устанавливаем позиционирование блоков относительно него*/
+    max-width: 1280px;
+    min-width: 1110px;
+    padding: 0 55px;
+    box-sizing: border-box; /*если увеличивать внутренние отступы, чтобы не увеличивался весь элемент*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.main-nav >ul{
+    list-style-type: none;
+    display: flex;
+
+}
+.main-nav >ul>li{
+    /*display: inline-block;*/
+    /*margin: 0 20px;*/
+    padding: 0 25px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.main-nav >ul>li:hover{
+    background-color: #45413e;
+}
+/*.main-nav >ul>li>a:hover{
+    color: #fff;
+}*/
+.main-nav >ul>li:hover a{ /*при наведении на li будет изменятся дочерний элемент a*/
+    color: #fff;
+}
+.main-nav >ul>li>a{
+    font-family: Roboto-Black;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #45413e;
+}
+.main-nav >ul>li>a>img{
+    margin-left: 15px;
+    vertical-align: middle;
+}
+.head-wrap .chetbox{
+    display: flex;
+}
+.head-wrap .chetbox>div{
+    /*margin: 0 10px;*/
+    padding: 0 15px;
+    height: 80px;
+    font-family: Roboto-Black;
+    font-size: 14px;
+    color: #b1b0b0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.head-wrap .chetbox>div>img{
+    /*margin: 0 10px;*/
+    padding-left: 10px;
+    vertical-align: middle;
+}
+/*как содержимое блока .search-contact-info сделать space-between*/
+/*.search-contact-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}*/
+.search-contact-info a{
+    margin: 0 15px;
+
+}
+
+.search-contact-info>div{
+    display: inline-block;
+    /*position: relative;*/
+}
+.search-contact-info>a>span{
+    position: relative;
+    font-family: Roboto-Black;
+    font-size: 12px;
+    color: #816fca;
+    bottom: 16px;
+    right: 8px;
+    background-color: white;
+    padding: 0 4px;
+    border-radius: 100%;
+    border: 2px solid;
+    border-color: #816fca;
+}
+.main-naw-wrap{
+    position: absolute;  /*будет позиционироваться относительно head-wrap(у которого position relative), поскольку ни у ul ни у nav не задан position absolute, relative или fixed*/
+    display: none; /*скрываем, будет изменятся при наведении курсора*/
+    top: 100%; /*чтоб он стал под хедером*/
+    left: 55px; /*поскольку мы сделали падинги по 55*/
+    width: calc(100% - 110px); /*ширина будет 100% head-wrap и на 110 пикселей меньше(это падинги с обоих сторон по 55px)*/
+    height: 380px;
+    background-color: #45413e;
+}
+/*.categories:hover .main-naw-wrap{*/
+    /*display: block;*/
+/*}*/
+
+.chetbox > div{
+    position: relative;
+    cursor: pointer;
+}
+.chetbox > div > ul{
+    position: absolute;  /*будет позиционироваться относительно head-wrap(у которого position relative), поскольку ни у ul ни у nav не задан position absolute, relative или fixed*/
+    display: none; /*скрываем, будет изменятся при наведении курсора*/
+    top: 100%;
+    /*display: flex;*/
+    /*list-style-type: none;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-around;*/
+    width: 100%;
+}
+.chetbox > div > ul>li{
+    font-family: Roboto-Black;
+    font-size: 14px;
+    display: flex;
+    height: 60px;
+    background-color: #45413e;
+    color: #fff;
+    width: inherit;
+    align-items: center;
+    justify-content: center;
+}
+/*.chetbox > div:hover ul{*/
+      /*display: block;*/
+/*}*/
+.chetbox > div:hover{
+    background-color: #45413e;
+    color: #fff;
+}
+.table-categories{
+    padding: 30px 70px 40px 50px;
+
+    /*background-color: greenyellow;*/
+    height: inherit;
+    box-sizing: border-box;
+}
+.table-categories >table{
+    /*background-color: green;*/
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    border: 1px solid #45413e; /* Прячем рамку вокруг таблицы */
+}
+.table-categories >table th,
+.table-categories >table td{
+    width: 100%;
+}
+.table-categories >table a{
+    color: #fff;
+    font-family: Roboto-Black;
+}
+.table-categories >table th{
+    height: 70px;
+}
+.table-categories >table th>a{
+    font-size: 16px;
+}
+.table-categories >table td>a{
+    font-size: 14px;
+}
